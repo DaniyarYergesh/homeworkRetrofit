@@ -42,7 +42,7 @@ class NewCurrencyFragment : BottomSheetDialogFragment() {
     }
 
     private fun onItemClick(name: String) {
-        viewModel.addNewRate(name, viewModel.loadSpecificRate(name))
+        viewModel.addNewRate(name)
         dismiss()
     }
 

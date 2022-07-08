@@ -14,7 +14,7 @@ class MainViewModel(
     private val repository: CurrencyRepository
 ) : ViewModel() {
 
-    var rates: Map<String, Double> = mapOf()
+    private var rates: Map<String, Double> = mapOf()
     private var currentRate: Double = 0.0
     var listOfRates: MutableLiveData<List<String>> = MutableLiveData(emptyList())
 
@@ -25,8 +25,8 @@ class MainViewModel(
     val balance: LiveData<Int> = _balance
 
 
-    fun addNewRate(key: String, value: Double) {
-        val newCurrency = Currency(Constants.id++, 0.0, key, R.drawable.image_1_3, value)
+    fun addNewRate(key: String) {
+        val newCurrency = Currency(Constants.id++, rates[key]!!, key, R.drawable.image_1_3, rates[key]!!)
         data.add(newCurrency)
         _currencyList.value = data
     }
@@ -92,10 +92,9 @@ class MainViewModel(
         }
     }
 
-    fun loadSpecificRate(currentName: String): Double {
-        viewModelScope.launch {
-            currentRate = repository.getCurrencyRates().rates[currentName]!!
-        }
-        return currentRate
-    }
+//    fun loadSpecificRate(currentName: String) {
+//        viewModelScope.launch {
+//            currentRate = repository.getCurrencyRates().rates[currentName]!!
+//        }
+//    }
 }

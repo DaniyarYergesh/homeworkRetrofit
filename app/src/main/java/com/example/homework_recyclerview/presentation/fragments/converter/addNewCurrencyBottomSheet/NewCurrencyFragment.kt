@@ -31,8 +31,6 @@ class NewCurrencyFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val adapter = NewCurrencyAdapter(::onItemClick)
-        adapter.data = emptyList()
-
         binding.rvNames.adapter = adapter
 
         viewModel.listOfRates.observe(viewLifecycleOwner) {
@@ -42,6 +40,7 @@ class NewCurrencyFragment : BottomSheetDialogFragment() {
     }
 
     private fun onItemClick(name: String) {
+
         viewModel.addNewRate(name)
         dismiss()
     }

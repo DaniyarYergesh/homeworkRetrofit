@@ -8,10 +8,12 @@ import com.example.convertor.R
 import com.example.homework_recyclerview.data.CurrencyRepository
 import com.example.homework_recyclerview.domain.repository.Currency
 import com.example.homework_recyclerview.utils.Constants
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 class MainViewModel(
-    private val repository: CurrencyRepository
+    private val repository: CurrencyRepository,
+    private val ioDispatchers:CoroutineDispatcher = Dispatchers.IO,
+    private val uiDispatcher: CoroutineDispatcher = Dispatchers.Main
 ) : ViewModel() {
 
     private var rates: Map<String, Double> = mapOf()
@@ -26,9 +28,15 @@ class MainViewModel(
 
 
     fun addNewRate(key: String) {
-        val newCurrency = Currency(Constants.id++, rates[key]!!, key, R.drawable.image_1_3, rates[key]!!)
-        data.add(newCurrency)
-        _currencyList.value = data
+        viewModelScope.launch(ioDispatchers) {
+            val rate = loadSpecificRate(key)
+            val newCurrency =
+                Currency(Constants.id++, rate, key, R.drawable.image_1_3, rate)
+            data.add(newCurrency)
+            withContext(uiDispatcher) {
+                _currencyList.value = data
+            }
+        }
     }
 
     fun setBalance(value: Int) {
@@ -85,16 +93,16 @@ class MainViewModel(
     }
 
     fun loadCurrencyRates() {
-        viewModelScope.launch {
+        GlobalScope.launch(ioDispatchers) {
             val results = repository.getCurrencyRates()
             rates = results.rates
-            listOfRates.value = rates.keys.toList()
+            withContext(uiDispatcher){
+                listOfRates.value = rates.keys.toList()
+            }
         }
     }
 
-//    fun loadSpecificRate(currentName: String) {
-//        viewModelScope.launch {
-//            currentRate = repository.getCurrencyRates().rates[currentName]!!
-//        }
-//    }
+    suspend fun loadSpecificRate(currentName: String) : Double {
+        return repository.getCurrencyRates().rates[currentName]!!
+    }
 }

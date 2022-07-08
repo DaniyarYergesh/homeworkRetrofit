@@ -26,7 +26,7 @@
         <entry key="app/src/main/res/layout/currency_recyclerview_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/custom_dialog.xml" value="0.33" />
         <entry key="app/src/main/res/layout/dialog_bottom_sheet.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/dialog_bottom_sheet_add_item.xml" value="0.32760416666666664" />
+        <entry key="app/src/main/res/layout/dialog_bottom_sheet_add_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/dialog_bottom_sheet_select_flag.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/layout/dialog_delete_item.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/layout/fragment_1.xml" value="0.33" />

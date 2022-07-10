@@ -61,6 +61,14 @@ class ConvertorFragment : Fragment(), DeleteDialogCallback {
             adapter.notifyDataSetChanged()
         }
 
+        viewModel.networkErrorException.observe(viewLifecycleOwner){
+            if (it == true){
+                Snackbar.make(binding.recyclerView, "Network Connection Fails", Snackbar.LENGTH_SHORT)
+                    .show()
+            }
+            Log.d("TAG", "$it")
+        }
+
     }
 
     private fun setupFirstCurrency() {

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.example.convertor.databinding.DialogBottomSheetAddItemBinding
 import com.example.homework_recyclerview.presentation.fragments.converter.MainViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class NewCurrencyFragment : BottomSheetDialogFragment() {
@@ -40,7 +41,6 @@ class NewCurrencyFragment : BottomSheetDialogFragment() {
     }
 
     private fun onItemClick(name: String) {
-
         viewModel.addNewRate(name)
         dismiss()
     }

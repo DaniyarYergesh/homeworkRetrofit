@@ -1,23 +1,24 @@
 package com.example.homework_recyclerview.presentation.fragments.converter
 
+import android.accounts.NetworkErrorException
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.convertor.R
 import com.example.homework_recyclerview.data.CurrencyRepository
+import com.example.homework_recyclerview.domain.models.CurrencyRates
 import com.example.homework_recyclerview.domain.repository.Currency
 import com.example.homework_recyclerview.utils.Constants
 import kotlinx.coroutines.*
 
 class MainViewModel(
     private val repository: CurrencyRepository,
-    private val ioDispatchers:CoroutineDispatcher = Dispatchers.IO,
+    private val ioDispatchers: CoroutineDispatcher = Dispatchers.IO,
     private val uiDispatcher: CoroutineDispatcher = Dispatchers.Main
 ) : ViewModel() {
 
-    private var rates: Map<String, Double> = mapOf()
-    private var currentRate: Double = 0.0
+    private var allRates: Map<String, Double> = mapOf()
     var listOfRates: MutableLiveData<List<String>> = MutableLiveData(emptyList())
 
     private var data = mutableListOf<Currency>()
@@ -25,17 +26,20 @@ class MainViewModel(
     val currencyList: LiveData<List<Currency>> = _currencyList
     private val _balance = MutableLiveData(0)
     val balance: LiveData<Int> = _balance
+    var networkErrorException = MutableLiveData(false)
 
 
     fun addNewRate(key: String) {
-        viewModelScope.launch(ioDispatchers) {
-            val rate = loadSpecificRate(key)
-            val newCurrency =
-                Currency(Constants.id++, rate, key, R.drawable.image_1_3, rate)
-            data.add(newCurrency)
-            withContext(uiDispatcher) {
-                _currencyList.value = data
+        try {
+            viewModelScope.launch(ioDispatchers) {
+                val rate = async { loadSpecificRate(key) }
+                val newCurrency =
+                    Currency(Constants.id++, rate.await(), key, R.drawable.image_1_3, rate.await())
+                data.add(newCurrency)
+                _currencyList.postValue(data)
             }
+        } catch (e: NetworkErrorException) {
+            networkErrorException.postValue(true)
         }
     }
 
@@ -92,17 +96,20 @@ class MainViewModel(
         _currencyList.value = newData
     }
 
+
     fun loadCurrencyRates() {
-        GlobalScope.launch(ioDispatchers) {
-            val results = repository.getCurrencyRates()
-            rates = results.rates
-            withContext(uiDispatcher){
-                listOfRates.value = rates.keys.toList()
+        try {
+            viewModelScope.launch(ioDispatchers) {
+                val results: Deferred<CurrencyRates> = async { repository.getCurrencyRates() }
+                allRates = results.await().rates
+                listOfRates.postValue(allRates.keys.toList())
             }
+        } catch (e: NetworkErrorException) {
+            networkErrorException.postValue(true)
         }
     }
 
-    suspend fun loadSpecificRate(currentName: String) : Double {
+    suspend fun loadSpecificRate(currentName: String): Double {
         return repository.getCurrencyRates().rates[currentName]!!
     }
 }

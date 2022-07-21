@@ -1,10 +1,10 @@
-package com.example.homework_recyclerview.presentation.fragments.personal_page
+package com.example.homework_recyclerview.presentation.personal_page
 
 import androidx.fragment.app.*
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.homework_recyclerview.presentation.fragments.personal_page.viewPagerFragments.PersonalPageViewPagerFirstFragment
-import com.example.homework_recyclerview.presentation.fragments.personal_page.viewPagerFragments.PersonalPageViewPagerSecondFragment
-import com.example.homework_recyclerview.presentation.fragments.personal_page.viewPagerFragments.PersonalPageVIewPagerThirdFragment
+import com.example.homework_recyclerview.presentation.personal_page.viewPagerFragments.PersonalPageViewPagerFirstFragment
+import com.example.homework_recyclerview.presentation.personal_page.viewPagerFragments.PersonalPageViewPagerSecondFragment
+import com.example.homework_recyclerview.presentation.personal_page.viewPagerFragments.PersonalPageVIewPagerThirdFragment
 
 class ViewPagerAdapter(fm: FragmentActivity): FragmentStateAdapter(fm) {
 

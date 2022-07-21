@@ -1,4 +1,4 @@
-package com.example.homework_recyclerview.presentation.fragments.movies
+package com.example.homework_recyclerview.presentation.movies
 
 import android.os.Bundle
 import android.view.LayoutInflater

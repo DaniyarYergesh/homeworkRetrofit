@@ -1,4 +1,4 @@
-package com.example.homework_recyclerview.presentation.fragments.converter
+package com.example.homework_recyclerview.presentation.converter
 
 import android.os.Bundle
 import android.view.View

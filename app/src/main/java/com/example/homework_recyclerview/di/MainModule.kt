@@ -1,9 +1,7 @@
 package com.example.homework_recyclerview.di
 
 import com.example.homework_recyclerview.data.CurrencyRepository
-import com.example.homework_recyclerview.presentation.fragments.converter.MainViewModel
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
+import com.example.homework_recyclerview.presentation.converter.MainViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

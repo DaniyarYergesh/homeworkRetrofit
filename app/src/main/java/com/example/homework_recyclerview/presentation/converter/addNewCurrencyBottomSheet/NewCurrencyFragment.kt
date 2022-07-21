@@ -1,14 +1,12 @@
-package com.example.homework_recyclerview.presentation.fragments.converter.addNewCurrencyBottomSheet
+package com.example.homework_recyclerview.presentation.converter.addNewCurrencyBottomSheet
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.convertor.databinding.DialogBottomSheetAddItemBinding
-import com.example.homework_recyclerview.presentation.fragments.converter.MainViewModel
+import com.example.homework_recyclerview.presentation.converter.MainViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class NewCurrencyFragment : BottomSheetDialogFragment() {

@@ -1,4 +1,4 @@
-package com.example.homework_recyclerview.presentation.fragments.converter
+package com.example.homework_recyclerview.presentation.converter
 
 import android.os.Bundle
 import android.text.Editable
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearSmoothScroller
 import com.example.convertor.R
 import com.example.convertor.databinding.LayoutFragmentConvertorBinding
 import com.example.homework_recyclerview.domain.repository.Currency
-import com.example.homework_recyclerview.presentation.fragments.converter.addNewCurrencyBottomSheet.NewCurrencyFragment
+import com.example.homework_recyclerview.presentation.converter.addNewCurrencyBottomSheet.NewCurrencyFragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel

@@ -1,4 +1,4 @@
-package com.example.homework_recyclerview.presentation.fragments.converter.addNewCurrencyBottomSheet
+package com.example.homework_recyclerview.presentation.converter.addNewCurrencyBottomSheet
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

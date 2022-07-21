@@ -65,6 +65,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="pinCode">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-686" />
+                            <option name="y" value="-299" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="searchFragment">
                     <value>
                       <LayoutPositions>
@@ -72,18 +84,6 @@
                           <Point>
                             <option name="x" value="-31" />
                             <option name="y" value="88" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="selectCurrencyBottomSheet">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="25" />
-                            <option name="y" value="373" />
                           </Point>
                         </option>
                       </LayoutPositions>

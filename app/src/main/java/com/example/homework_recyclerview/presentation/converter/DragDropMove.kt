@@ -1,4 +1,4 @@
-package com.example.homework_recyclerview.presentation.fragments.converter
+package com.example.homework_recyclerview.presentation.converter
 
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView

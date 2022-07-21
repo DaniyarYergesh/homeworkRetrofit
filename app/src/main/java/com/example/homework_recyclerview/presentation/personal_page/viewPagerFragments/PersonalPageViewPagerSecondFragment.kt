@@ -1,4 +1,4 @@
-package com.example.homework_recyclerview.presentation.fragments.personal_page.viewPagerFragments
+package com.example.homework_recyclerview.presentation.personal_page.viewPagerFragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

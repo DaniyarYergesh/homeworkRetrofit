@@ -1,4 +1,4 @@
-package com.example.homework_recyclerview.presentation.fragments.personal_page
+package com.example.homework_recyclerview.presentation.translator
 
 import android.os.Bundle
 import android.util.Log
@@ -90,12 +90,12 @@ class PinCode : Fragment(R.layout.layout_fragment_pincode) {
             if (isSame == true) {
                 textView.setTextColor(resources.getColor(R.color.blue))
                 textView.startAnimation(animShake2)
-                parentFragmentManager
-                    .beginTransaction()
-                    .replace(
-                        R.id.nav_host_fragment_activity_main,
-                        PersonalPage(), "Fragment"
-                    ).addToBackStack(null).commit()
+//                parentFragmentManager
+//                    .beginTransaction()
+//                    .replace(
+//                        R.id.nav_host_fragment_activity_main,
+//                        PersonalPage(), "Fragment"
+//                    ).addToBackStack(null).commit()
             } else {
                 textView.setTextColor(resources.getColor(R.color.red))
                 textView.startAnimation(animShake)

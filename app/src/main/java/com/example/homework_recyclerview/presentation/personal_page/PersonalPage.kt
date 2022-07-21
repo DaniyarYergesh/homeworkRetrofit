@@ -1,4 +1,4 @@
-package com.example.homework_recyclerview.presentation.fragments.personal_page
+package com.example.homework_recyclerview.presentation.personal_page
 
 import android.os.Bundle
 import android.view.View

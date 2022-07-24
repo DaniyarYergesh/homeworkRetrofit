@@ -56,6 +56,7 @@ class ConvertorFragment : Fragment(), DeleteDialogCallback {
         setupFirstCurrency()
 
 
+
         viewModel.currencyList.observe(viewLifecycleOwner) {
             adapter.submitList(it)
             adapter.notifyDataSetChanged()

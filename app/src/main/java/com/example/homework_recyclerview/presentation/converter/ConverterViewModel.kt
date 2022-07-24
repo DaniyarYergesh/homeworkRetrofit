@@ -1,14 +1,20 @@
 package com.example.homework_recyclerview.presentation.converter
 
 import android.accounts.NetworkErrorException
+import android.app.Activity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.work.OneTimeWorkRequest
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
+import androidx.work.workDataOf
 import com.example.convertor.R
 import com.example.homework_recyclerview.data.CurrencyRepository
 import com.example.homework_recyclerview.domain.models.CurrencyRates
 import com.example.homework_recyclerview.domain.repository.Currency
+import com.example.homework_recyclerview.presentation.converter.addNewCurrencyBottomSheet.UploadWork
 import com.example.homework_recyclerview.utils.Constants
 import kotlinx.coroutines.*
 
@@ -41,6 +47,15 @@ class MainViewModel(
         } catch (e: NetworkErrorException) {
             networkErrorException.postValue(true)
         }
+    }
+
+    fun uploadImage(){
+        val myUploadWork = OneTimeWorkRequestBuilder<UploadWork>()
+            .setInputData(
+                workDataOf(
+                    "IMAGE_URI" to "https://www.worldometers.info//img/flags/small/tn_af-flag.gif"
+                )
+            ).build()
     }
 
     fun setBalance(value: Int) {

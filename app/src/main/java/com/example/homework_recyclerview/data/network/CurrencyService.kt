@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface CurrencyService {
 
-    @Headers("apikey: 8dUPULO3tpIv67dZRUIMjgUgRI6TTxDl")
+    @Headers("apikey: LLQm0urscE2G2AZxhJ4Y9EyE70TrPqDE")
     @GET("latest")
     suspend fun getCurrencyRates(
         @Query("base") base: String = "KZT"

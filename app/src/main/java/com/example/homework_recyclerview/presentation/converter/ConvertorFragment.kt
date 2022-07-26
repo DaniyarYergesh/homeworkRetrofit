@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
 import com.example.convertor.R
-import com.example.convertor.databinding.LayoutFragmentConvertorBinding
+import com.example.convertor.databinding.FragmentConvertorBinding
 import com.example.homework_recyclerview.domain.repository.Currency
 import com.example.homework_recyclerview.presentation.converter.addNewCurrencyBottomSheet.NewCurrencyFragment
 import com.google.android.material.snackbar.Snackbar
@@ -22,7 +22,7 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 class ConvertorFragment : Fragment(), DeleteDialogCallback {
 
     private val viewModel: MainViewModel by sharedViewModel()
-    private var _binding: LayoutFragmentConvertorBinding? = null
+    private var _binding: FragmentConvertorBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
@@ -42,7 +42,7 @@ class ConvertorFragment : Fragment(), DeleteDialogCallback {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = LayoutFragmentConvertorBinding.inflate(inflater, container, false)
+        _binding = FragmentConvertorBinding.inflate(inflater, container, false)
         return binding.root
     }
 

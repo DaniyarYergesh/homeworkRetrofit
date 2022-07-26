@@ -8,7 +8,7 @@ import androidx.navigation.Navigation
 import com.example.convertor.R
 import com.google.android.material.textfield.TextInputEditText
 
-class Movies : Fragment(R.layout.layout_fragment_movies) {
+class Movies : Fragment(R.layout.fragment_movies) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import com.example.convertor.R
 
 
-class PersonalPageViewPagerFirstFragment : Fragment(R.layout.personal_page_viewpager_first_page) {
+class PersonalPageViewPagerFirstFragment : Fragment(R.layout.viewpager_first_page) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -10,7 +10,7 @@
         android:id="@+id/personalPageFragment"
         android:name="com.example.homework_recyclerview.presentation.personal_page.PersonalPage"
         android:label="Main_Fragment2_mainPage"
-        tools:layout="@layout/layout_fragment_personal_page">
+        tools:layout="@layout/fragment_personal_page">
         <deepLink
             app:action="android.intent.action.VIEW"
             app:uri="https://www.deeplinks1.com" />
@@ -20,7 +20,7 @@
         android:id="@+id/moviesFragment"
         android:name="com.example.homework_recyclerview.presentation.movies.Movies"
         android:label="Fragment3_Main"
-        tools:layout="@layout/layout_fragment_movies">
+        tools:layout="@layout/fragment_movies">
         <action
             android:id="@+id/action_moviesFragment_to_fragmentMovieDetails"
             app:destination="@id/fragmentMovieDetails"
@@ -34,7 +34,7 @@
         android:id="@+id/convertorFragment"
         android:name="com.example.homework_recyclerview.presentation.converter.ConvertorFragment"
         android:label="Main_Fragment1"
-        tools:layout="@layout/layout_fragment_convertor">
+        tools:layout="@layout/fragment_convertor">
         <deepLink
             app:action="android.intent.action.VIEW"
             app:uri="https://www.deeplinks3.com" />
@@ -51,10 +51,10 @@
     </fragment>
 
     <fragment
-        android:id="@+id/translatorFragment"
-        android:name="com.example.homework_recyclerview.presentation.translator.TranslatorFragment"
-        android:label="fragment_translator"
-        tools:layout="@layout/fragment_translator" >
+        android:id="@+id/chatFragment"
+        android:name="com.example.homework_recyclerview.presentation.translator.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" >
         <deepLink
             app:action="android.intent.action.VIEW"
             app:uri="https://www.deeplinks5.com" />
@@ -64,12 +64,7 @@
         android:id="@+id/fragmentMovieDetails"
         android:name="com.example.homework_recyclerview.presentation.movies.FragmentMovieDetails"
         android:label="FragmentMovieDetails"
-        tools:layout="@layout/layout_fragment_movie_details">
+        tools:layout="@layout/fragment_movie_details">
     </fragment>
-
-    <fragment
-        android:id="@+id/pinCode"
-        android:name="com.example.homework_recyclerview.presentation.translator.PinCode"
-        android:label="PinCode" />
 
 </navigation>

@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.TextView
 import com.example.convertor.R
 
-class PersonalPageViewPagerSecondFragment : Fragment(R.layout.personal_page_viewpager_second_page) {
+class PersonalPageViewPagerSecondFragment : Fragment(R.layout.viewpager_second_page) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

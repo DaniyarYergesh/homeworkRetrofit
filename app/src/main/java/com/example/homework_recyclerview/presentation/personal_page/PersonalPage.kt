@@ -8,7 +8,7 @@ import com.example.convertor.R
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class PersonalPage : Fragment(R.layout.layout_fragment_personal_page) {
+class PersonalPage : Fragment(R.layout.fragment_personal_page) {
 
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

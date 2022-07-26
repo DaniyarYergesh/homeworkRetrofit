@@ -16,7 +16,7 @@ class FragmentMovieDetails : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.layout_fragment_movie_details, container, false)
+        return inflater.inflate(R.layout.fragment_movie_details, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

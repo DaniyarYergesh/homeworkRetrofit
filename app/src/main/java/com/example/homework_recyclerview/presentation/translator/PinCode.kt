@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.convertor.R
 
-class PinCode : Fragment(R.layout.layout_fragment_pincode) {
+class PinCode : Fragment(R.layout.fragment_pincode) {
 
     lateinit var textView: TextView
 
